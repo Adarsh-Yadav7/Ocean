@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MarineData AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-water"></i>
+                <span>MarineData AI</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="models.html">AI Models</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="data.html">Data Sources</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Dashboard Hero -->
+    <section class="dashboard-hero">
+        <div class="container">
+            <h1>Interactive Data Dashboard</h1>
+            <p>Real-time visualization of oceanographic, fisheries, and biodiversity data</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Controls -->
+    <section class="dashboard-controls">
+        <div class="container">
+            <div class="control-panel">
+                <div class="filter-group">
+                    <label for="data-type">Data Type:</label>
+                    <select id="data-type">
+                        <option value="all">All Data</option>
+                        <option value="oceanographic">Oceanographic</option>
+                        <option value="fisheries">Fisheries</option>
+                        <option value="biodiversity">Biodiversity</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="time-range">Time Range:</label>
+                    <select id="time-range">
+                        <option value="7d">Last 7 Days</option>
+                        <option value="30d">Last 30 Days</option>
+                        <option value="90d">Last 90 Days</option>
+                        <option value="1y">Last Year</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="apply-filters">Apply Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-grid">
+                <div class="dashboard-card large-card">
+                    <h3>Species Distribution Map</h3>
+                    <div class="map-container" id="species-map">
+                        <!-- Map will be rendered by JavaScript -->
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Interactive species distribution map</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Biodiversity Trends</h3>
+                    <canvas id="biodiversity-chart"></canvas>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Ocean Parameters</h3>
+                    <canvas id="ocean-chart"></canvas>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Species Classification Results</h3>
+                    <div class="classification-results">
+                        <div class="species-item">
+                            <span class="species-name">Tuna</span>
+                            <span class="species-confidence">92%</span>
+                        </div>
+                        <div class="species-item">
+                            <span class="species-name">Mackerel</span>
+                            <span class="species-confidence">87%</span>
+                        </div>
+                        <div class="species-item">
+                            <span class="species-name">Sardine</span>
+                            <span class="species-confidence">78%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CodeVerse - Smart India Hackathon</p>
+        </div>
+    </footer>
+
+    <script src="scripts/global.js"></script>
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

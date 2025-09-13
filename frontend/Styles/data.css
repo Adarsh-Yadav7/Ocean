@@ -1,0 +1,119 @@
+/* ===== DATA PAGE STYLES ===== */
+
+/* Data Hero */
+.data-hero {
+    background: linear-gradient(rgba(5, 30, 52, 0.8), rgba(5, 30, 52, 0.8)), url('https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.data-hero h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.data-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Data Sources Section */
+.data-sources-section {
+    background-color: var(--white);
+}
+
+.data-sources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.data-source-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.data-source-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.data-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.data-features {
+    list-style: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.data-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.data-features li:before {
+    content: '✓';
+    color: var(--success);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Data Flow Section */
+.data-flow-section {
+    background-color: var(--light);
+}
+
+.data-flow-diagram {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flow-step {
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    padding: 20px;
+}
+
+.flow-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.flow-arrow {
+    color: var(--gray);
+    font-size: 1.5rem;
+}
+
+/* Responsive Design for Data */
+@media (max-width: 968px) {
+    .data-flow-diagram {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .data-sources-grid {
+        grid-template-columns: 1fr;
+    }
+}
