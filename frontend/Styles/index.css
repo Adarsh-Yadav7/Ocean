@@ -1,5 +1,4 @@
 /* ===== INDEX PAGE STYLES ===== */
-
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(5, 30, 52, 0.8), rgba(5, 30, 52, 0.8)), url('https://images.unsplash.com/photo-1530533718754-001d2668365a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
@@ -7,92 +6,132 @@
     padding: 120px 0;
     text-align: center;
 }
-
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: white;
 }
-
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     opacity: 0.9;
 }
-
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 30px;
 }
-
 /* Challenge Section */
 .challenge-section {
     background-color: var(--white);
 }
-
 .challenge-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
-
 .challenge-card {
     background: linear-gradient(145deg, #f0f0f0, #ffffff);
     border-left: 4px solid var(--secondary);
 }
-
 .challenge-card h3 {
     color: var(--secondary);
     display: flex;
     align-items: center;
 }
-
 .challenge-card h3 i {
     margin-right: 10px;
 }
-
 /* Solution Section */
 .solution-section {
     background-color: var(--light);
 }
-
 .solution-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
-
 .solution-card {
     text-align: center;
     border-top: 4px solid var(--accent);
 }
-
 .solution-icon {
     font-size: 2.5rem;
     color: var(--accent);
     margin-bottom: 15px;
 }
-
 /* Responsive Design for Index */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.2rem;
     }
-    
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
     .challenge-grid,
     .solution-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Additional Animations & Effects ===== */
+/* Fade-in effect for sections and elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Bounce animation for hero heading */
+.hero h1 {
+    animation: bounceIn 1s ease forwards;
+}
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* Card hover effect */
+.card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+/* Button pulse animation on hover */
+.btn:hover {
+    animation: pulse 1s infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
     }
 }
