@@ -3,6 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize charts
     initCharts();
+    // Initialize map
+    initSpeciesMap();
     
     // Filter functionality
     const applyFiltersBtn = document.getElementById('apply-filters');
@@ -80,6 +82,23 @@ function initCharts() {
     });
 }
 
+function initSpeciesMap() {
+    const map = L.map('species-map').setView([20, 80], 3); // India region
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const speciesData = [
+        { name: 'Tuna', coords: [15, 70] },
+        { name: 'Mackerel', coords: [18, 85] },
+        { name: 'Sardine', coords: [10, 75] }
+    ];
+
+    speciesData.forEach(sp => {
+        L.marker(sp.coords).addTo(map).bindPopup(`<b>${sp.name}</b><br>Observed Here`);
+    });
+}
+
 function simulateFiltering(dataType, timeRange) {
     // Show loading state
     const applyBtn = document.getElementById('apply-filters');
@@ -89,10 +108,7 @@ function simulateFiltering(dataType, timeRange) {
     
     // Simulate API call delay
     setTimeout(() => {
-        // Update charts with "new" data based on filters
         alert(`Filters applied: Data Type = ${dataType}, Time Range = ${timeRange}`);
-        
-        // Restore button state
         applyBtn.textContent = originalText;
         applyBtn.disabled = false;
     }, 1000);
